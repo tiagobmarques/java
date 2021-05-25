@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:29.0-jre'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+application {
+    // Define the main class for the application.
+    mainClassName = 'list.App'
+}
+
+test {
+    // Use junit platform for unit tests
+    useJUnitPlatform()
+}
